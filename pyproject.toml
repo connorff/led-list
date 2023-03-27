@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "led-list"
+version = "0.4.0"
+authors = [
+  { name="Connor Fogarty", email="connorflynnfogarty@gmail.com" },
+]
+description = "Teach Python lists with a BlinkStick LED strip."
+readme = "README.md"
+requires-python = ">=3.7"
+
+dependencies=[
+    "BlinkStick >= 0.7.0",
+    
+    # explicity include linux + windows USB libs to fix linux support
+    "pywinusb",
+    "pyusb == 1.0.0"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/connorff/led-list"

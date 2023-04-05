@@ -49,12 +49,12 @@ class LEDList(UserList):
 
         if len(new) > len(cached):
             # find lights to turn on
-            additional = new[overlap:]
+            new = new[overlap:]
+            updates.extend(enumerate(new, overlap))
         else:
-            # find lights to turn off
-            additional = [(0, 0, 0)] * (len(cached) - overlap)
-
-        updates.extend(enumerate(additional, overlap))
+            # find lights to turn off (reverse order)
+            off = [(0, 0, 0)] * (len(cached) - overlap)
+            updates.extend(reversed(list(enumerate(off, overlap))))
 
         return updates
 

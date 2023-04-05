@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "led-list"
-version = "0.5.0"
+version = "0.5.2"
 authors = [
   { name="Connor Fogarty", email="connorflynnfogarty@gmail.com" },
 ]

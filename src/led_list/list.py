@@ -91,6 +91,12 @@ class LEDList(UserList):
 
         self.__cache = self.__leds_to_tuple(self.data)
 
+    def set(self, new: List) -> None:
+        self.data = new
+        self.__light()
+
+        return
+
     def remove(self, item) -> None:
         super().remove(item)
         self.__light()

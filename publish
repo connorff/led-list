@@ -1,0 +1,8 @@
+# remove previous builds
+rm -r dist
+
+# build led-list package
+python3 -m build
+
+# publish to pypi
+twine upload dist/*

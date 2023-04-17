@@ -103,6 +103,12 @@ class LEDList(UserList):
 
         return
 
+    def pop(self, i: int = -1):
+        ret = super().pop(i)
+        self.__light()
+
+        return ret
+
     def append(self, item) -> None:
         super().append(item)
         self.__light()
